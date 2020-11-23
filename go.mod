@@ -1,3 +1,3 @@
-module api-eater
+module nhl-api
 
 go 1.15

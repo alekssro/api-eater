@@ -8,7 +8,7 @@ import (
 	"sync"
 	"time"
 
-	"api-eater/nhlapi"
+	"nhl-api/nhlapi"
 )
 
 func main() {
@@ -56,11 +56,13 @@ func main() {
 
 	}
 
+	// wait for all teams to finish, then close results chan
 	go func() {
 		wg.Wait()
 		close(results)
 	}()
 
+	// display roster info for every roster sent into results chan
 	display(results)
 
 	// stop time for benchmark
