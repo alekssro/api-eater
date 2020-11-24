@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"io"
 	"log"
 	"os"
@@ -72,7 +71,7 @@ func main() {
 func display(results chan []nhlapi.Roster) {
 	for r := range results {
 		for _, ros := range r {
-			fmt.Println("-------------------------------")
+			log.Println("-------------------------------")
 			log.Printf("ID: %v\n", ros.Person.ID)
 			log.Printf("Name: %s\n", ros.Person.FullName)
 			log.Printf("Position: %s\n", ros.Position.Code)
